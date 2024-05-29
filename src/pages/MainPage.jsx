@@ -25,6 +25,10 @@ const MainPage = () => {
     const handlePopup = () => {
       setIsPopupOpened(!isPopupOpened);
     }
+    useEffect(() => {
+      const titleElement = document.getElementsByTagName("title")[0];
+      titleElement.innerHTML = "메인 페이지";
+    }, []);
   return (
     <div className="main-page">
       <section className="main-vis">

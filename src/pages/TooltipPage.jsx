@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TooltipPage = () => {
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const handleToolTip = () => {
     setIsTooltipOpen(!isTooltipOpen)
   }
+
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = "툴팁 페이지";
+  }, []);
   return (
     <div style={{minHeight: "100vh"}}>
       <div className="tooltip-wrap">

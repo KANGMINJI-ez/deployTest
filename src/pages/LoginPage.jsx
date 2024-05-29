@@ -50,11 +50,17 @@ const LoginPage = () =>{
     dispatch(login(data));
     
   }
-const loginState = useSelector((state) => state.loginSlice.isLogin);
+  const loginState = useSelector((state) => state.loginSlice.isLogin);
   useEffect(() => {
     loginState && navigate("/main");
     !loginState && navigate("/login");
-  }, [loginState])
+  }, [loginState]);
+
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = "로그인 페이지";
+  }, []);
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>

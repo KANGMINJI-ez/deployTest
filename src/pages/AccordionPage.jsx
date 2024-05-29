@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AccordionPage = () => {
   // const [accoHeight, setAccoHeight] = useState("");
@@ -25,6 +25,11 @@ const AccordionPage = () => {
       }
       e.target.parentNode.style.height = `${ttlHeight}px`;
   };
+
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = "아코디언 페이지";
+  }, []);
 
   return (
     <div className="accordion-wrap">

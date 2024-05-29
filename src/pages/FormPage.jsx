@@ -51,8 +51,10 @@ const FormPage = () => {
   };
 
   useEffect(() => {
-    console.log(formValue, "formValue");
-  }, [formValue]);
+    const titleElement = document.getElementsByTagName("title")[0]; 
+    titleElement.innerHTML = "폼 페이지"
+  }, []);
+
 
   return (
     <div className="form-wrap">
